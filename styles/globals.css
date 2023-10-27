@@ -2,26 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "Basement Grotesque";
+  src: url("./fonts/BasementGrotesque-Black.woff2") format("woff2"),
+    url("./fonts/BasementGrotesque-Black.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.md-text-shadow {
+  text-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 3px 3px #fff,
+    -3px -3px #fff, 3px -3px #fff, -3px 3px #fff;
+}
+.text-shadow {
+  text-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.texto-carrusel {
+  display: inline-block;
+  white-space: nowrap;
+  animation: desplazar 100s linear infinite;
+  width: 200%;
+  text-align: left;
+  transform: translateX(0%);
+  animation-timing-function: linear;
+}
+
+@keyframes desplazar {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+::selection {
+  color: black;
+  background-color: white;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
 }
