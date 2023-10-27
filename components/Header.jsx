@@ -10,7 +10,7 @@ const Header = () => {
   const { cartItems, isOpen, setIsOpen } = useCart();
 
   return (
-    <header>
+    <header className="px-1 sm:px-0">
       {isOpen && (
         <CartModal closeModal={() => setIsOpen(false)} cartItems={cartItems} />
       )}

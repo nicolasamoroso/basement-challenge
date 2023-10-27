@@ -7,15 +7,19 @@ export default function CartModal({ closeModal, cartItems }) {
     currency: "ARS",
   });
 
-  const totalAmount = cartItems.reduce(
-    (acc, item) => acc + item.product.price * item.count,
-    0
-  );
+  let totalAmount = 0;
+  console.log(cartItems);
+  if (cartItems) {
+    totalAmount = cartItems.reduce(
+      (acc, item) => acc + item.product.price * item.count,
+      0
+    );
+  }
 
   const total = USDollar.format(Math.round(totalAmount * 100) / 100);
 
   return (
-    <div className="absolute flex flex-col justify-between md:block md:border-l md:border-b z-30 right-0 top-0 bg-black w-full h-full md:w-[650px] md:h-[60vh]">
+    <div className="absolute flex flex-col justify-between md:block md:border-l md:border-b z-30 right-0 top-0 bg-black w-full h-full md:w-[650px] md:h-[60vh] px-2 sm:px-0">
       <div className="p-2 sm:p-3 h-full md:h-[50vh] overflow-auto">
         <div className="flex flex-col items-end">
           <button onClick={closeModal}>

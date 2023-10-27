@@ -22,7 +22,7 @@ const Products = ({ products }) => {
   };
 
   return (
-    <ul className="py-3 pb-16 md:py-16 w-[95vw] m-auto grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5 select-none gap-y-16">
+    <ul className="pt-3 pb-16 px-2 sm:px-0 md:py-16 w-[95vw] m-auto grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5 select-none gap-y-16">
       {products.map((product) => (
         <li
           key={product.id}
