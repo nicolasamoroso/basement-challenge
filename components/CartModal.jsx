@@ -19,7 +19,7 @@ export default function CartModal({ closeModal, cartItems }) {
       <div className="p-2 sm:p-3 h-full md:h-[50vh] overflow-auto">
         <div className="flex flex-col items-end">
           <button onClick={closeModal}>
-            <Text css="sm:text-[1rem] pb-5 pt-4">→ CLOSE</Text>
+            <Text css="sm:text-[1rem] pb-5 pt-4 pr-5">→ CLOSE</Text>
           </button>
         </div>
         <div className="flex flex-col items-center sm:flex-row gap-5 justify-center">
