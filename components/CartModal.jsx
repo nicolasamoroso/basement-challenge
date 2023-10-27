@@ -15,8 +15,8 @@ export default function CartModal({ closeModal, cartItems }) {
   const total = USDollar.format(Math.round(totalAmount * 100) / 100);
 
   return (
-    <div className="absolute flex flex-col justify-between md:block md:border-l md:border-b z-30 right-0 top-0 bg-black w-[100vw] h-[100vh] md:w-[650px] md:h-[60vh]">
-      <div className="p-2 sm:p-3 h-[100%] md:h-[50vh] overflow-auto">
+    <div className="absolute flex flex-col justify-between md:block md:border-l md:border-b z-30 right-0 top-0 bg-black w-full h-full md:w-[650px] md:h-[60vh]">
+      <div className="p-2 sm:p-3 h-full md:h-[50vh] overflow-auto">
         <div className="flex flex-col items-end">
           <button onClick={closeModal}>
             <Text css="sm:text-[1rem] pb-5 pt-4">→ CLOSE</Text>
