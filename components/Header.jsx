@@ -39,9 +39,9 @@ const CartModal = ({ cartItems }) => {
           <Dialog.Overlay className="fixed h-full w-full z-20 right-0 top-0 bg-[rgba(0,0,0,0.5)]" />
           <Dialog.Content
             onCloseAutoFocus={(e) => e.preventDefault()}
-            className="fixed flex flex-col h-[100vh] md:block md:border-l md:border-b z-30 right-0 top-0 bg-black w-full md:w-[650px] md:h-[59vh] px-2 sm:px-0"
+            className="fixed flex flex-col z-30 right-0 top-0 bg-black border-l border-b w-full h-full md:w-[650px] md:max-h-[600px]"
           >
-            <div className="p-2 sm:p-3 h-[100vh] md:h-[50vh] overflow-auto flex-wrap">
+            <div className="p-2 sm:p-3 overflow-auto flex-wrap">
               <div className="flex flex-col items-end">
                 <Dialog.Close asChild>
                   <button aria-label="Close">
@@ -55,7 +55,7 @@ const CartModal = ({ cartItems }) => {
                   CART
                 </Text>
               </div>
-              <ul className="sm:max-h-[23vw] mt-5 sm:mt-10 flex flex-col sm:block gap-3">
+              <ul className=" mt-5 sm:mt-10 flex flex-col sm:block gap-3">
                 {cartItems.length === 0 && (
                   <div className="flex flex-col items-center sm:flex-row gap-5 justify-center">
                     <Text css="text-[4rem] sm:text-[4.7rem]">IS</Text>
@@ -101,7 +101,7 @@ const CartModal = ({ cartItems }) => {
 export { CartModal };
 
 const Header = () => {
-  const { cartItems, isOpen, setIsOpen } = useCart();
+  const { cartItems } = useCart();
 
   return (
     <header className="px-1 sm:px-0">

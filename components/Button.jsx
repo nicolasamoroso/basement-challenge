@@ -4,7 +4,7 @@ const Button = ({ children, id }) => {
   const { incrementCount, decrementCount } = useCart();
   return (
     <div
-      className="border sm:border-2 p-1 sm:p-2 rounded-3xl text-[0.6rem] sm:text-[1rem] flex gap-3 select-none"
+      className="border sm:border-2 py-1 px-[0.4rem] md:py-2 md:px-3 rounded-3xl text-[0.6rem] xs:text-[0.8rem] sm:text-[1rem] flex gap-3 select-none"
       key={id}
     >
       <button
