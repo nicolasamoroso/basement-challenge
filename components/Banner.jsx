@@ -3,7 +3,7 @@ import Ellipse from "./Ellipse";
 
 const Banner = () => {
   return (
-    <section className="px-3 sm:px-0">
+    <section className="px-3 py-3 sm:px-0 sm:py-1 md:py-0">
       <article className="w-[93vw] m-auto">
         <Text css="text-center text-[14vw]">BASEMENT</Text>
         <span className="flex items-center justify-center gap-2 md:gap-5">
