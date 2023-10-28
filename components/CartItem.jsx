@@ -14,8 +14,8 @@ const CartItem = ({ item, index }) => {
           src={item.product.image}
           alt={`${item.product.name} product image`}
           objectFit="contain"
-          width={`${item.product.name === "Black cap" ? "120" : "300"}`}
-          height={`${item.product.name === "Black cap" ? "120" : "300"}`}
+          width={item.product.name === "Black cap" ? "120" : "300"}
+          height={item.product.name === "Black cap" ? "120" : "300"}
           draggable={false}
         />
       </div>

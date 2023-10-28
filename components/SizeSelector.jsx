@@ -15,7 +15,7 @@ const SizeSelector = ({ item }) => {
         <button
           key={index}
           className={
-            "data-checked:border rounded-full py-1 px-2 text-[0.6rem] sm:px-[13px] sm:pt-[6px] sm:text-[1.5rem]"
+            "data-checked:border rounded-full py-1 px-2 text-[0.6rem] sm:px-[13px] sm:pt-[6px] sm:text-[1.2rem]"
           }
           data-ui={selectedSize === size ? "checked" : undefined}
           onClick={() => handleSizeSelection(size)}

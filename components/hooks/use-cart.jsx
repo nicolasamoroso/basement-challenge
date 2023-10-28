@@ -13,20 +13,10 @@ export function useCart() {
 
       let newCartItems;
       if (existingItem) {
-        incrementCount(product.id, 1);
+        existingItem.count++;
         newCartItems = prevCartItems;
       } else newCartItems = [...prevCartItems, { product, count: 1 }];
 
-      localStorage.setItem("cartItems", JSON.stringify(newCartItems));
-      return newCartItems;
-    });
-  };
-
-  const removeFromCart = (productId) => {
-    setCartItems((prevCartItems) => {
-      const newCartItems = prevCartItems.filter(
-        (item) => item.product.id !== productId
-      );
       localStorage.setItem("cartItems", JSON.stringify(newCartItems));
       return newCartItems;
     });
@@ -48,16 +38,16 @@ export function useCart() {
 
   const decrementCount = (productId, count) => {
     setCartItems((prevCartItems) => {
-      const newCartItems = prevCartItems.map((item) => {
-        if (item.product.id === productId) {
-          const newCount = item.count - count;
-          if (newCount === 0) removeFromCart(productId);
-          else {
+      const newCartItems = prevCartItems
+        .map((item) => {
+          if (item.product.id === productId) {
+            const newCount = item.count - count;
+
             return { ...item, count: newCount };
           }
-        }
-        return item;
-      });
+          return item;
+        })
+        .filter((item) => item.count !== 0);
       localStorage.setItem("cartItems", JSON.stringify(newCartItems));
       return newCartItems;
     });
@@ -69,7 +59,6 @@ export function useCart() {
     isOpen,
     setIsOpen,
     setCartItems,
-    removeFromCart,
     incrementCount,
     decrementCount,
   };
