@@ -39,7 +39,7 @@ const CartModal = ({ cartItems }) => {
           <Dialog.Overlay className="fixed h-full w-full z-20 right-0 top-0 bg-[rgba(0,0,0,0.5)]" />
           <Dialog.Content
             onCloseAutoFocus={(e) => e.preventDefault()}
-            className="fixed flex flex-col z-30 right-0 top-0 bg-black border-l border-b w-full h-full md:w-[650px] md:max-h-[600px]"
+            className="fixed flex flex-col z-30 right-0 top-0 bg-black md:border-l md:border-b w-full h-full md:w-[650px] md:max-h-[600px]"
           >
             <div className="p-2 sm:p-3 overflow-auto flex-wrap">
               <div className="flex flex-col items-end">
